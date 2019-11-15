@@ -1,0 +1,123 @@
+
+      if(data){
+    console.log(db.connection)
+     console.log("DATA====>>>>>>>",data)
+        
+         var check_ship = 0;
+     console.log(data.mmsi);
+        db.collection('data').find({"mmsi":data.mmsi},function(err,data){
+              //console.log('ALREADY ADDED RESULT ===>>>>',data)
+            check_ship = 1;
+         })
+
+        if(check_ship > 0){
+             Update Query
+           db.collection('data').update({"mmsi":data.mmsi},{$set:{"data":data}},function(err,result){
+               if(err)
+               throw err;
+
+                console.log('updated=====>>>')
+            })
+            
+         } else{
+    //          // Insert Query
+    //         db.collection('data').insertOne(data,function(err,result) {
+    //             if(err)
+    //            throw err;
+    //            //console.log('insert')
+    //         })
+    //     }
+    // }
+
+
+
+
+
+    // if(data){
+    //     // console.log(db.connection)
+    //     // console.log("DATA====>>>>>>>",data)
+        
+    //     var check_ship = 0;
+    //     // console.log(data.mmsi);
+    //     db.collection('data').find({"mmsi":data.mmsi},function(err,data){
+    //          //console.log('ALREADY ADDED RESULT ===>>>>',data)
+    //         check_ship = 1;
+    //     })
+
+    //     if(check_ship > 0){
+    //         // Update Query
+    //        db.collection('data').update({"mmsi":data.mmsi},{$set:{"data":data}},function(err,result){
+    //            if(err)
+    //            throw err;
+
+    //            console.log('updated=====>>>')
+    //        })
+            
+    //     } else{
+    //          // Insert Query
+    //         db.collection('data').insertOne(data,function(err,result) {
+    //             if(err)
+    //            throw err;
+    //            //console.log('insert')
+    //         })
+    //     }
+    // }
+
+
+
+// console.log(typeof(data.mmsi))
+// console.log(data.mmsi)
+// var mm = data.mmsi
+// if(isNaN(mm)){
+// 	console.log("not a number"+mm);
+//  }else{
+//     console.log("valid mmsi"+mm);
+
+
+
+
+// const express = require('express')
+// const app = express();
+// app.use(express.json());
+// const net = require('net')
+// const cors = require('cors')
+
+// app.use(cors());
+
+
+// app.get('/aisdata',(req,res,next)=>{
+//     var client = new net.Socket();
+//     client.connect(5631,'153.44.253.27',()=>{console.log('Ais Connected')})
+//     client.on('data',(Ais_hub,err)=>{
+//         if(err)
+//         throw err ;
+//         return res.status(200).send({message: "Succesfully", data : Ais_hub.toString()})   
+//     })
+
+// })
+
+
+
+
+
+// app.get('/aisdata', (req, res) => {
+//     var client = new net.Socket();
+// client.connect(5631, '153.44.253.27', function() {
+//         console.log('Ais Connected');        
+// });
+// client.on('data', function(Ais_hub,err) {
+    
+//     // res.status(200).send({message: "Succesfully", data: Ais_hub.toString()})
+//     // // var ais = data.toString();
+//     // //   console.log('Received: ' + data.toString());
+//     // // client.destroy()
+//     // return;
+// })
+
+// // client.on('close', function() {
+// //         console.log('Connection closed');
+// // });
+  
+//     });
+    
+// app.listen(8082,()=>{console.log('Server Invoked')})
