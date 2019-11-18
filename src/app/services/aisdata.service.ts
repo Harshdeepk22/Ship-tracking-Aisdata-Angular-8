@@ -10,7 +10,7 @@ import { catchError, retry, tap, map } from 'rxjs/operators';
 })
 export class AisdataService {
   headers = new HttpHeaders();
-base_Url = "http://localhost:3001/"
+base_Url = "https://first-node-server.herokuapp.com/"
 
   constructor(private http: HttpClient,private handle : ResponseService) { }
 
