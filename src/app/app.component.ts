@@ -65,7 +65,10 @@ onMouseOut(infoWindow, $event: MouseEvent) {
   infoWindow.close();
 }
 
-mapReady(){
+// mapReady(){
+//   this.getdata()
+// }
+Refresh_Data(){
   this.getdata()
 }
 

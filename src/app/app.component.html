@@ -8,7 +8,7 @@
     {{Data.long}} 
 </div> -->
 
-<agm-map  [latitude]="39.9" [longitude]="-0.16" (mapClick)="mapReady()">
+<agm-map  [latitude]="64.964875" [longitude]="17.675409" [zoom]="4">
      <agm-marker  *ngFor="let machine of gps_lats; index as i" 
                   [latitude]="gps_lats[i]"
                   [longitude]="gps_longs[i]" 
@@ -44,4 +44,5 @@
 
                 </agm-marker>
   </agm-map>
+  <button class="btn" (click)="Refresh_Data()">Refresh</button>
 <router-outlet></router-outlet>

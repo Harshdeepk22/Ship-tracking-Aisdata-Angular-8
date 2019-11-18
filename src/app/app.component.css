@@ -1,3 +1,19 @@
 agm-map {
     height: 500px;
   }
+
+  .btn {
+    background-color: blue;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+    margin-right: 584px;
+    margin-top: 15px;
+  }
