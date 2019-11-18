@@ -34,6 +34,10 @@ export class AppComponent {
 
   getdata(){
     this.service.Ais_Data().subscribe(res =>{
+    if(res == undefined){
+      console.log('Loading Data....')
+    }
+      else{     
       console.log(res,"data====>")
       //console.log(Object.values(res['data']).map(({ lat }) => lat));
      for(let key in res){
@@ -53,7 +57,7 @@ export class AppComponent {
        this.gps_shipname = Object.values(res[key].data).map(({ shipname }) => shipname)
      
        }
-   
+      }
   })
  }
 
@@ -69,7 +73,16 @@ onMouseOut(infoWindow, $event: MouseEvent) {
 //   this.getdata()
 // }
 Refresh_Data(){
-  this.getdata()
+ if(this.getdata() == undefined) {
+  alert('Refresh data')
+  
+} 
+else{
+  alert('data loaded')
 }
+
+}
+
+
 
 }
